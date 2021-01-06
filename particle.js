@@ -6,12 +6,13 @@ class Particle{
         }
       this.body = Bodies.circle(x,y,radius,opt);
       this.radius = radius;
+      this.color = color(random(0,255),random(10,255),random(10,255));
       World.add(world,this.body);
     }
     display(){
         var pos = this.body.position;
       ellipseMode(RADIUS);
-      fill(random(0,255),random(10,255),random(10,255));
+      fill(this.color);
       ellipse(pos.x,pos.y,this.radius);
     }
     
